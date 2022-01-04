@@ -19,6 +19,13 @@ public class Index {
 
         LinkedList linkedList = new LinkedList(node1);
 
-        linkedList.print();
+        linkedList.print(Order.STRAIGHT);
+        System.out.println("\n");
+        linkedList.print(Order.REVERSE);
+
+        System.out.println("\nItem Count :: " + linkedList.count());
+
+        System.out.println("isPresent h :: " + linkedList.isPresent("h"));
+        System.out.println("isPresent z :: " + linkedList.isPresent("z"));
     }
 }
