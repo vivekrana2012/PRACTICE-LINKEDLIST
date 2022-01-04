@@ -12,54 +12,22 @@ public class LinkedList {
     }
 
     void print(Order order) {
-        if (Order.STRAIGHT == order) printNow(this.head);
-        else printReverse(this.head);
+        new PrintTask(order).execute(this.head);
     }
 
     int count() {
-        return countNow(this.head);
+        return new CountTask().execute(this.head);
     }
 
     boolean isPresent(String data) {
-        return isPresent(this.head, data);
+        return new FindTask(data).execute(this.head);
     }
 
-    private boolean isPresent(Node node, String data) {
-
-        if (data.equals(node.getData())) {
-            return true;
-        }
-
-        if (node.hasNext()) {
-            return isPresent(node.getNext(), data);
-        } else {
-            return false;
-        }
+    boolean isSorted() {
+        return new SortedTask().execute(this.head);
     }
 
-    private int countNow(Node node) {
+    void add(Node node) {
 
-        if (node.hasNext()) {
-            return 1 + countNow(node.getNext());
-        } else {
-            return 1;
-        }
-    }
-
-    private void printNow(Node node) {
-        System.out.print(node.getData() + ", ");
-
-        if (node.hasNext()) {
-            printNow(node.getNext());
-        }
-    }
-
-    private void printReverse(Node node) {
-
-        if (node.hasNext()) {
-            printReverse(node.getNext());
-        }
-
-        System.out.print(node.getData() + ", ");
     }
 }

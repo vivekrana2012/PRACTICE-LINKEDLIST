@@ -27,5 +27,7 @@ public class Index {
 
         System.out.println("isPresent h :: " + linkedList.isPresent("h"));
         System.out.println("isPresent z :: " + linkedList.isPresent("z"));
+
+        System.out.println("isSorted :: " + linkedList.isSorted());
     }
 }
