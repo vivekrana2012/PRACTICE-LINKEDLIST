@@ -41,4 +41,14 @@ public class LinkedList {
             new AddTask(node).execute(this.head);
         }
     }
+
+    Node remove(Node node) {
+
+        if (this.head.getData().equals(node.getData())) {
+            node.setNext(this.head.getNext());
+            this.head = this.head.getNext();
+        }
+
+        return new RemoveTask(node).execute(this.head);
+    }
 }

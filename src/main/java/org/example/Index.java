@@ -20,7 +20,7 @@ public class Index {
         linkedList.add(node6);
 
         linkedList.print(Order.STRAIGHT);
-        System.out.println("\n");
+        System.out.println("");
         linkedList.print(Order.REVERSE);
 
         System.out.println("\nItem Count :: " + linkedList.count());
@@ -29,5 +29,16 @@ public class Index {
         System.out.println("isPresent z :: " + linkedList.isPresent("z"));
 
         System.out.println("isSorted :: " + linkedList.isSorted());
+
+        Node removedNode = linkedList.remove(node5);
+
+        System.out.println("Removed Node :: " + removedNode.getData());
+
+        linkedList.print(Order.STRAIGHT);
+
+        linkedList.add(new Node("g"));
+        System.out.println("");
+
+        linkedList.print(Order.STRAIGHT);
     }
 }
