@@ -11,13 +11,13 @@ public class Index {
         Node node5 = new Node("h");
         Node node6 = new Node("j");
 
-        node1.setNext(node2);
-        node2.setNext(node3);
-        node3.setNext(node4);
-        node4.setNext(node5);
-        node5.setNext(node6);
-
         LinkedList linkedList = new LinkedList(node1);
+
+        linkedList.add(node2);
+        linkedList.add(node3);
+        linkedList.add(node4);
+        linkedList.add(node5);
+        linkedList.add(node6);
 
         linkedList.print(Order.STRAIGHT);
         System.out.println("\n");

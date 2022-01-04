@@ -8,6 +8,11 @@ public class LinkedList {
     private Node head;
 
     public LinkedList(Node head) {
+
+        if (head == null) {
+            throw new NullPointerException();
+        }
+
         this.head = head;
     }
 
@@ -29,5 +34,11 @@ public class LinkedList {
 
     void add(Node node) {
 
+        if (this.head.getData().compareTo(node.getData()) > 0) {
+            node.setNext(this.head);
+            this.head = node;
+        } else {
+            new AddTask(node).execute(this.head);
+        }
     }
 }
