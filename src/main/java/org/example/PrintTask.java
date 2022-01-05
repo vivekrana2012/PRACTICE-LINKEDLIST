@@ -17,6 +17,11 @@ public class PrintTask implements LinkedListTask<Void> {
     }
 
     private void printNow(Node node) {
+
+        if (node.isCircularHead()) {
+            return;
+        }
+
         System.out.print(node.getData() + ", ");
 
         if (node.hasNext()) {
@@ -25,6 +30,10 @@ public class PrintTask implements LinkedListTask<Void> {
     }
 
     private void printReverse(Node node) {
+
+        if (node.isCircularHead()) {
+            return;
+        }
 
         if (node.hasNext()) {
             printReverse(node.getNext());

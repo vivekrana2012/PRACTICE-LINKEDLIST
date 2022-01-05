@@ -15,8 +15,11 @@ public class RemoveTask implements LinkedListTask<Node> {
             return null;
         }
 
-        if (node.getNext().getData().equals(removeNode.getData())) {
-            removeNode.setNext(node.getNext().getNext());
+        if (node.getNext().isCircularHead()) {
+            return null;
+        }
+
+        if (node.getNext().equals(removeNode)) {
             node.setNext(node.getNext().getNext());
 
             return removeNode;

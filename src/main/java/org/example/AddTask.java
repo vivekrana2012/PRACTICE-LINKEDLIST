@@ -17,7 +17,14 @@ public class AddTask implements LinkedListTask<Void> {
             return null;
         }
 
-        if (node.getNext().getData().compareTo(this.newNode.getData()) > 0) {
+        if (node.getNext().isCircularHead()) {
+            newNode.setNext(node.getNext());
+            node.setNext(newNode);
+            
+            return null;
+        }
+
+        if (node.getNext().compareTo(this.newNode) > 0) {
             this.newNode.setNext(node.getNext());
             node.setNext(this.newNode);
         } else {

@@ -4,14 +4,14 @@ public class Index {
 
     public static void main(String[] args) {
 
-        Node node1 = new Node("a");
-        Node node2 = new Node("c");
-        Node node3 = new Node("e");
-        Node node4 = new Node("f");
-        Node node5 = new Node("h");
-        Node node6 = new Node("j");
+        Node node1 = new Node("c");
+        Node node2 = new Node("e");
+        Node node3 = new Node("f");
+        Node node4 = new Node("h");
+        Node node5 = new Node("j");
+        Node node6 = new Node("l");
 
-        LinkedList linkedList = new LinkedList(node1);
+        LinkedList linkedList = new LinkedListFactory().supply(LinkedListType.CIRCULAR, node1);
 
         linkedList.add(node2);
         linkedList.add(node3);
@@ -26,17 +26,24 @@ public class Index {
         System.out.println("\nItem Count :: " + linkedList.count());
 
         System.out.println("isPresent h :: " + linkedList.isPresent("h"));
-        System.out.println("isPresent z :: " + linkedList.isPresent("z"));
+        System.out.println("isPresent a :: " + linkedList.isPresent("a"));
 
         System.out.println("isSorted :: " + linkedList.isSorted());
 
         Node removedNode = linkedList.remove(node5);
 
-        System.out.println("Removed Node :: " + removedNode.getData());
+        System.out.println("Removed Node :: " + removedNode);
 
         linkedList.print(Order.STRAIGHT);
 
-        linkedList.add(new Node("g"));
+        Node removedNode2 = linkedList.remove(node1);
+
+        System.out.println("");
+        System.out.println("Removed Node :: " + removedNode2);
+
+        linkedList.print(Order.STRAIGHT);
+
+        linkedList.add(node1);
         System.out.println("");
 
         linkedList.print(Order.STRAIGHT);

@@ -15,6 +15,10 @@ public class FindTask implements LinkedListTask<Boolean> {
             return true;
         }
 
+        if (node.isCircularHead()) {
+            return false;
+        }
+
         if (node.hasNext()) {
             return execute(node.getNext());
         } else {

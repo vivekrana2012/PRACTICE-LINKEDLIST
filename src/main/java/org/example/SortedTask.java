@@ -4,11 +4,16 @@ public class SortedTask implements LinkedListTask<Boolean> {
 
     @Override
     public Boolean execute(Node node) {
+
         if (!node.hasNext()) {
             return true;
         }
 
-        if (node.getData().compareTo(node.getNext().getData()) <= 0) {
+        if (node.getNext().isCircularHead()) {
+            return true;
+        }
+
+        if (node.compareTo(node.getNext()) <= 0) {
             return execute(node.getNext());
         } else {
             return false;
