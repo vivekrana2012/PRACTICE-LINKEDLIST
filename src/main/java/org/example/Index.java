@@ -11,7 +11,7 @@ public class Index {
         Node node5 = new Node("j");
         Node node6 = new Node("l");
 
-        LinkedList linkedList = new LinkedListFactory().supply(LinkedListType.CIRCULAR, node1);
+        LinkedList linkedList = new LinkedListFactory().supply(LinkedListType.DOUBLY, node1);
 
         linkedList.add(node2);
         linkedList.add(node3);

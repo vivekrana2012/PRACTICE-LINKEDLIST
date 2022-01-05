@@ -13,6 +13,7 @@ public class AddTask implements LinkedListTask<Void> {
 
         if (!node.hasNext()) {
             node.setNext(newNode);
+            newNode.setPrevious(node);
 
             return null;
         }
@@ -20,12 +21,15 @@ public class AddTask implements LinkedListTask<Void> {
         if (node.getNext().isCircularHead()) {
             newNode.setNext(node.getNext());
             node.setNext(newNode);
-            
+
             return null;
         }
 
         if (node.getNext().compareTo(this.newNode) > 0) {
             this.newNode.setNext(node.getNext());
+            this.newNode.setPrevious(node);
+
+            node.getNext().setPrevious(this.newNode);
             node.setNext(this.newNode);
         } else {
             execute(node.getNext());
