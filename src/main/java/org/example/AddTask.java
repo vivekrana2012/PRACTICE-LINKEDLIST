@@ -20,6 +20,9 @@ public class AddTask implements LinkedListTask<Void> {
 
         if (node.getNext().isCircularHead()) {
             newNode.setNext(node.getNext());
+            newNode.setPrevious(node);
+            node.getNext().setPrevious(newNode);
+
             node.setNext(newNode);
 
             return null;

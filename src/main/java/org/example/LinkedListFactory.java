@@ -7,6 +7,7 @@ public class LinkedListFactory {
         if (type == LinkedListType.SINGLY) return new SinglyLinkedList(node);
         if (type == LinkedListType.CIRCULAR) return new CircularLinkedList(node);
         if (type == LinkedListType.DOUBLY) return new DoublyLinkedList(node);
+        if (type == LinkedListType.DOUBLY_CIRCULAR) return new DoublyCircularLinkedList(node);
 
         return null;
     }
